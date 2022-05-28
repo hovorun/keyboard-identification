@@ -1,19 +1,11 @@
-import * as core from '@actions/core'
-import {wait} from './wait'
+export function createUserPayload(firstName: string, lastname: string, ) {
+  const currentDate = new Date();
+  const expirationDate = currentDate;
+  expirationDate.setMonth(currentDate.getMonth() + 12);
+  const user = { firstName, lastname, createdAt: formatDate(currentDate), validUntil: formatDate(expirationDate)};
+  // TODO implement BE POST request
 
-async function run(): Promise<void> {
-  try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
-
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
-
-    core.setOutput('time', new Date().toTimeString())
-  } catch (error) {
-    if (error instanceof Error) core.setFailed(error.message)
-  }
+  return user;
 }
 
-run()
+export const formatDate = (date: Date) => (date.toISOString().slice(0, 10));
