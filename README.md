@@ -1,7 +1,7 @@
-# keyboard-identification
+# Keyboard-identification
 
-Short specification:
-• support for multiple users;
-• obtaining high accuracy of user identification using keyboard handwriting;
-• only the keyboard and PC access to the Internet are required as peripherals;
+<b>Short specification</b>:<br>
+• support for multiple users;<br>
+• obtaining high accuracy of user identification using keyboard handwriting;<br>
+• only the keyboard and PC access to the Internet are required as peripherals;<br>
 • simple and user-friendly interface;
