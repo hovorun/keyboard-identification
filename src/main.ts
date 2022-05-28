@@ -1,4 +1,4 @@
-export function createUserPayload(firstName: string, lastName: string, ) {
+export function createUserPayload(firstName: string, lastName: string): object {
   const currentDate = new Date();
   const expirationDate = currentDate;
   expirationDate.setMonth(currentDate.getMonth() + 12);
@@ -8,4 +8,4 @@ export function createUserPayload(firstName: string, lastName: string, ) {
   return user;
 }
 
-export const formatDate = (date: Date) => (date.toISOString().slice(0, 10));
+export const formatDate = (date: Date): string => (date.toISOString().slice(0, 10));
