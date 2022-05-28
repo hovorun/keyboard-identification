@@ -1,4 +1,4 @@
-# keyboard-identification
+# Keyboard-identification
 
 <b>Short specification:</b><br>
 • support for multiple users; <br>
