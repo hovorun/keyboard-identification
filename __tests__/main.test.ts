@@ -6,7 +6,7 @@ test('Valid user created', async () => {
     const currentDate = new Date();
     const expirationDate = currentDate;
     expirationDate.setMonth(currentDate.getMonth() + 12);
-    expect(createUserPayload('Volodymyr', 'Hovorun')).toBe({
+    expect(createUserPayload('Volodymyr', 'Hovorun')).toStrictEqual({
         firstName: 'Volodymyr',
         lastName: 'Hovorun',
         createdAt: formatDate(currentDate),

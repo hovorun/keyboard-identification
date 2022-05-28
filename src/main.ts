@@ -1,8 +1,8 @@
-export function createUserPayload(firstName: string, lastname: string, ) {
+export function createUserPayload(firstName: string, lastName: string, ) {
   const currentDate = new Date();
   const expirationDate = currentDate;
   expirationDate.setMonth(currentDate.getMonth() + 12);
-  const user = { firstName, lastname, createdAt: formatDate(currentDate), validUntil: formatDate(expirationDate)};
+  const user = { firstName, lastName, createdAt: formatDate(currentDate), validUntil: formatDate(expirationDate)};
   // TODO implement BE POST request
 
   return user;
