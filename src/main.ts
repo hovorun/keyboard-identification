@@ -4,8 +4,12 @@ export function createUserPayload(firstName: string, lastName: string): object {
   expirationDate.setMonth(currentDate.getMonth() + 12);
   const user = { firstName, lastName, createdAt: formatDate(currentDate), validUntil: formatDate(expirationDate)};
   // TODO implement BE POST request
-
   return user;
 }
 
-export const formatDate = (date: Date): string => (date.toISOString().slice(0, 10));
+export const formatDate = (date?: Date| null ): string => {
+  if(date === null || date === undefined) return '';
+
+  return date.toISOString().slice(0, 10);
+};
+

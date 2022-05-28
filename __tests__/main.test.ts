@@ -13,3 +13,17 @@ test('Valid user created', async () => {
         validUntil: formatDate(expirationDate)
     });
 })
+
+test('Format method check', async () => {
+    const currentDate = new Date();
+    expect(formatDate(currentDate)).toBe(currentDate.toISOString().slice(0, 10));
+})
+
+
+test('Format method check if null', async () => {
+    expect(formatDate(null)).toBe('');
+})
+
+test('Format method check if undefined', async () => {
+    expect(formatDate(undefined)).toBe('');
+})
